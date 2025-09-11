@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Shadespage1</title>
+    <link rel="stylesheet" href="web1.css">
+    <style>
+        :root {
+        --primary: #efbf00;
+        --secondary: #232b38;
+        --ternary: #6c6c6c;
+        --danger: #fefefe;
+        --pure: #fefefe;
+        --light: #f0f0f0;
+        --heaven: #ffffff;
+        --footer: #040b1a;
+        --box-shadow: 0 0.5rem 1.5rem rgb(0, 0, 0, 0.1);
+        --border: 0.2rem solid rgb(0, 0, 0, 0.1);
+        --outline: 0.1rem solid rgb(0, 0, 0, 0.1);
+        --outline-hover: 0.2rem solid var(--footer);
+      }
+      nav .top {
+        padding: 1.5rem 0;
+      }
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+      }
+      nav .contact {
+        display: flex;
+        align-items: center;
+      }
+      nav .container .branding h1 {
+        color: var(--primary);
+      }
+      nav .container .branding h3 {
+        margin-left: 5rem;
+        margin-bottom: 2rem;
+      }
+      nav .time {
+        display: flex;
+        align-items: center;
+      }
+
+      nav .top .contact h5 {
+        margin-bottom: 0.25rem;
+      }
+      nav .top .contact h6 {
+        letter-spacing: 0.055rem;
+        font-size: 0.75rem;
+        color: var(--ternary);
+      }
+      nav .top .contact img {
+        margin-right: 1rem;
+      }
+      nav .navbar a {
+        text-decoration: none;
+        color: var(--scondary);
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+      }
+      nav .navbar a.active {
+        background: var(--primary);
+        color: var(--pure);
+      }
+      nav .navbar a:hover {
+        background: var(--primary);
+        color: var(--pure);
+      }
+      .magic-shadow {
+        position: relative;
+        background: var(--heaven);
+      }
+      .magic-shadow:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 69px;
+        background-image: url(icons/shadow.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -27px;
+        z-index: -1;
+      }
+
+      .btn {
+        padding: 0.5rem 0.9rem;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        line-height: 0.8;
+        line-width: 0.6;
+        font-size: 1.2rem;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        border: 1px dotted transparent;
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: var(--heaven);
+      }
+      .btn-secondary {
+        background:saddlebrown;
+        color: var(--heaven);
+      }
+      .btn-secondary:hover {
+        background: var(--primary);
+        color: var(--danger);
+      }
+
+      section.catrgories .box-container .box {
+        padding: 2rem 1rem;
+        background: var(--danger);
+        outline: var(--outline);
+        outline-offset: -1rem;
+        box-shadow: var(--box-shadow);
+      }
+      .catrgories .box-container .box:hover {
+        transform: scale(
+          1.1
+        ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+      section.catrgories {
+        background-color: var(--light);
+      }
+      .catrgories .box-container .box img {
+        margin-left: 7rem;
+        width: 10rem;
+      }
+      .products .box-container .box .products {
+        margin-left: 10rem;
+      }
+
+      .products .box-container .box .stars {
+        display: flex;
+        margin-left: 10rem;
+        margin-bottom: 1rem;
+      }
+      .catrgories .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 1.5rem;
+      }
+      .catrgories .box-container .box img#loreal {
+        margin-right: 11rem;
+        width: 10rem;
+      }
+      .catrgories .box-container .box img {
+        width: 12rem;
+      }
+      .slick-slide {
+        margin: 0 27px;
+      }
+      .slick-list {
+        margin: 0 -27px;
+      }
+      .catrgories .box-container .box h3 {
+        margin-left: 7rem;
+        margin-top: 2rem;
+      }
+      .catrgories .box-container .box h2 {
+        margin-left: 6rem;
+        margin-top:0.7rem;
+      }
+      
+      .catrgories .box-container .box h4 {
+        margin-left: 3rem;
+      }
+      .catrgories .box-container .box .btn {
+        margin-left: 7rem;
+        margin-top: 3rem;
+      }
+      .catrgories .box-container .box img#loreal .btn {
+      }
+      .catrgories .box-container .box img#loreal1 {
+        margin-right: 11rem;
+        width: 10rem;
+      }
+      .section-heading {
+        text-align: center;
+        position: relative;
+        margin-bottom: 4rem;
+      }
+      .section-heading:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 30px;
+        background-image: url(icons/hr.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        bottom: -40px;
+      }
+    </style>
+</head>
+<body>
+    <div class="menu_bar">
+        <h1 class="logo">Friend'z <span>Collection</span></h1>
+        <ul>
+            <li><a href="home.html" >Home</a></li>
+            <li><a href="fashion.html" >Fashion</a></li>
+            <li><a href="Accessories.html">Accessories<i class="fas fa-caret-down"></i></a>
+                <div class="dropdown_menu">
+                    <ul>
+                        <li><a href="watches.html">Watches</a></li>
+                        <li><a href="shades.html">Shades</a></li>
+                        <li><a href="belts.html">Belts</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </div>
+    <main>
+        <section><center>
+                      <h1><u>Shades</u></h1>
+            <h5><u>Price and details may vary based on product quality.</u></h5></center>
+            <section class="catrgories">
+                <h1 class="section-heading"><u></u></h1>
+                <div class="container">
+                    <div class="box-container">
+                        <div class="box">
+                            <img  src="img/chasma1.jpg"  height="200px">
+                            <h3 class="vagitable">shades</h3>
+                            <h2>RS=499/-  (28% off)</h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary vagitable"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma2.jpg"  height="200px">
+                            <h3 class="beauty">shades</h3>
+                            <h2>RS=699/- (25% off)</h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary beauty"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma3.jpg"  height="200x">
+                            <h3 class="fruits">shades</h3>
+                            <h2>RS=799/- (18% off)</h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary fruits"> Shop Now</button></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+                    <section class="catrgories">
+                      <h1 class="section-heading"><u>Brands In Focus</u></h1>
+                <div class="container">
+                    <div class="box-container">
+                        <div class="box">
+                            <img  src="img/chasma4.jpg"  height="200px">
+                            <h3 class="vagitable">shades</h3>
+                            <h2>RS=399/- (29% off)</h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary vagitable"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma5.jpg"  height="200px">
+                            <h3 class="beauty">French Connection</h3>
+                            <h2>RS=599/- (15% off) </h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary beauty"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma6.jpg"  height="200px">
+                            <h3 class="fruits">shades</h3>
+                            <h2>RS=999/-(12% off) </h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary fruits"> Shop Now</button></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>        <section class="catrgories">
+              <h1 class="section-heading"><u>Deal Of The day</u></h1>
+              
+                <div class="container">
+                    <div class="box-container">
+                        <div class="box">
+                            <img  src="img/chasma7.jpg"  height="200px">
+                            <h3 class="vagitable">shades</h3>
+                            <h2>RS=869/-(20% off) </h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary vagitable"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma12.jpg"  height="200px">
+                            <h3 class="beauty">Thug Life</h3>
+                            <h2>RS=899/- (33% off) </h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary beauty"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma11.jpg"  height="200px">
+                            <h3 class="fruits">shades</h3>
+                            <h2>RS=799/- (10% off) </h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary fruits"> Shop Now</button></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+                    <section class="catrgories">
+                      <h1 class="section-heading"><u>More Brands To Explore</u></h1>
+                <div class="container">
+                    <div class="box-container">
+                        <div class="box">
+                            <img  src="img/chasma10.jpg"  height="200px">
+                            <h3 class="vagitable">shades</h3>
+                            <h2>RS=1,999/-(64% off) </h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary vagitable"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma9.jpg"  height="200px">
+                            <h3 class="beauty">shades</h3>
+                            <h2>RS=499/- (54% off)</h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary beauty"> Shop Now</button></a>
+                        </div>
+                        <div class="box">
+                            <img src="img/chasma8.jpg"  height="200px">
+                            <h3 class="fruits">shades</h3>
+                            <h2>RS=399/- (34% off)</h2><br>
+                            <h4>FREE Delivery on your first order in this category</h4>
+                            <a href="paymentform.html" target="_blank">
+                                <button class="btn btn-secondary fruits"> Shop Now</button></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        
+             <hr>
+             <footer>
+               <div class="waves">
+                 <div class="wave" id="wave1"></div>
+                 <div class="wave" id="wave2"></div>
+                 <div class="wave" id="wave3"></div>
+                 <div class="wave" id="wave4"></div>
+         
+               </div>
+               <ul class="social_icon">
+                <li><a href="https://www.facebook.com/marketplace/you/selling"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                <li><a href="https://www.instagram.com/trendy_look_1313/"><ion-icon name="logo-instagram"></ion-icon></a></li>
+              </ul>
+               <ul class="menu">
+                 
+                 <li><a href="home.html">Home</a></li>
+                 <li><a href="fashion.html">Fashion</a></li>
+                 <li><a href="Accessories.html">Accessories</a></li>
+                 <li><a href="about.html">About Us</a></li>
+                 </ul>
+               <p>@2021 Friend'zCollection.com| All Right Reserved</p>
+             </footer>
+             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+             <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>                                
+
+        </section>
+    </main>
+</body>
+</html>
